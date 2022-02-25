@@ -81,7 +81,16 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-const mdTheme = createTheme();
+const mdTheme = createTheme({
+  palette: {
+    primary: {
+      light: '#33afaf',
+      main: '#009C9C',
+      dark: '#006d6d',
+      contrastText: '#fff',
+    },
+  }
+});
 
 function DashboardContent() {
   const [open, setOpen] = React.useState(true);

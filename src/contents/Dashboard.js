@@ -83,7 +83,15 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-const mdTheme = createTheme();
+const mdTheme = createTheme({
+  palette: {
+    success: {
+      light: '#33afaf',
+      main: '#009C9C',
+      dark: '#006d6d',
+    }
+  },
+});
 
 function DashboardContent() {
   const [open, setOpen] = React.useState(true);
@@ -168,8 +176,8 @@ function DashboardContent() {
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Grid container spacing={3}>
               <Grid item xs={12}>
-                <ButtonGroup color="info" variant="contained" aria-label="outlined button group">
-                  <Button>시스템 원장</Button>
+                <ButtonGroup color="success" variant="outlined" aria-label="outlined button group">
+                  <Button >시스템 원장</Button>
                   <Button>PASS 원장</Button>
                   <Button>PASS 신청 원장</Button>
                   <Button>ROOT 인증서 원장</Button>
