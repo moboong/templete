@@ -21,7 +21,10 @@ import { mainListItems, secondaryListItems } from './listItems';
 
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
-import IndexComponent from './IndexComponent';
+
+import DataTable from './DataTable';
+import DataGrid from './DataGrid';
+import DataGridDemo from './DataGridDemo';
 
 
 function Copyright(props) {
@@ -176,7 +179,7 @@ function DashboardContent() {
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Grid container spacing={3}>
               <Grid item xs={12}>
-                <ButtonGroup color="success" variant="outlined" aria-label="outlined button group">
+                <ButtonGroup color="success" variant="contained" aria-label="outlined button group">
                   <Button >시스템 원장</Button>
                   <Button>PASS 원장</Button>
                   <Button>PASS 신청 원장</Button>
@@ -184,7 +187,8 @@ function DashboardContent() {
                 </ButtonGroup>
               </Grid>
               <Grid item xs={12}>
-                <IndexComponent />
+                <DataTable />
+                <DataGridDemo />
               </Grid> 
             </Grid>
             <Copyright sx={{ pt: 4 }} />
