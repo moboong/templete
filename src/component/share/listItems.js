@@ -3,27 +3,50 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import ListSubheader from '@mui/material/ListSubheader';
-import DashboardIcon from '@mui/icons-material/Dashboard';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import PeopleIcon from '@mui/icons-material/People';
 import BarChartIcon from '@mui/icons-material/BarChart';
-import LayersIcon from '@mui/icons-material/Layers';
 import AssignmentIcon from '@mui/icons-material/Assignment';
-
 import AssessmentIcon from '@mui/icons-material/Assessment';
-import AppsIcon from '@mui/icons-material/Apps';
 import SettingsIcon from '@mui/icons-material/Settings';
 import NoAccountsIcon from '@mui/icons-material/NoAccounts';
 import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
 
+import { NavLink } from "react-router-dom";
+import { color } from '@mui/system';
+
 export const mainListItems = (
   <React.Fragment>
-    <ListItemButton>
-      <ListItemIcon>
-        <LibraryBooksIcon />
-      </ListItemIcon>
-      <ListItemText primary="원장 정보" />
-    </ListItemButton>
+    <NavLink to='/sysmas'> 
+      <ListItemButton>
+        <ListItemIcon>
+          <LibraryBooksIcon />
+        </ListItemIcon>
+        <ListItemText primary="시스템 원장" style={{ textDecoration: 'none', color: 'inherit'  }} />
+      </ListItemButton>
+    </NavLink>
+    <NavLink to='/passMas' style={{ textDecoration: 'none', color: 'inherit'  }} >
+      <ListItemButton>
+        <ListItemIcon>
+          <LibraryBooksIcon />
+        </ListItemIcon>
+        <ListItemText primary="PASS 원장" />
+      </ListItemButton>
+    </NavLink>
+    <NavLink to='/passAplyMas'>
+      <ListItemButton>
+        <ListItemIcon>
+          <LibraryBooksIcon />
+        </ListItemIcon>
+        <ListItemText primary="PASS 신청 원장" />
+      </ListItemButton>
+    </NavLink>
+    <NavLink to='/rootCertMas'>
+      <ListItemButton>
+        <ListItemIcon>
+          <LibraryBooksIcon />
+        </ListItemIcon>
+        <ListItemText primary="ROOT 인증서 원장" />
+      </ListItemButton>
+    </NavLink>
     <ListItemButton>
       <ListItemIcon>
         <AssignmentIcon />

@@ -12,20 +12,17 @@ import IconButton from '@mui/material/IconButton';
 import Badge from '@mui/material/Badge';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
+import Paper from '@mui/material/Paper';
 import Link from '@mui/material/Link';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import { mainListItems, secondaryListItems } from './listItems';
-
+import { mainListItems, secondaryListItems } from '../../share/listItems';
 
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 
-import DataTable from './DataTable';
-import DataGrid from './DataGrid';
-import DataGridDemo from './DataGridDemo';
-
+import DataTable from '../contentspage/DataTable';
 
 function Copyright(props) {
   return (
@@ -88,12 +85,13 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 
 const mdTheme = createTheme({
   palette: {
-    success: {
+    primary: {
       light: '#33afaf',
       main: '#009C9C',
       dark: '#006d6d',
-    }
-  },
+      contrastText: '#fff',
+    },
+  }
 });
 
 function DashboardContent() {
@@ -113,6 +111,7 @@ function DashboardContent() {
               backgroundColor: '#009C9C'
             }}
           >
+            
             
             <IconButton
               edge="start"
@@ -177,21 +176,23 @@ function DashboardContent() {
         >
           <Toolbar />
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+
             <Grid container spacing={3}>
+
+              {/* table */}
               <Grid item xs={12}>
-                <ButtonGroup color="success" variant="contained" aria-label="outlined button group">
-                  <Button >시스템 원장</Button>
-                  <Button>PASS 원장</Button>
-                  <Button>PASS 신청 원장</Button>
-                  <Button>ROOT 인증서 원장</Button>
+                <ButtonGroup color="primary" variant="contained" aria-label="outlined button group">
+                  <Button>PASS 원장 추가</Button>
                 </ButtonGroup>
               </Grid>
               <Grid item xs={12}>
+
                 <DataTable />
-                <DataGridDemo />
-              </Grid> 
+                
+              </Grid>
             </Grid>
             <Copyright sx={{ pt: 4 }} />
+            
           </Container>
         </Box>
       </Box>
