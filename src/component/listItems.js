@@ -11,19 +11,18 @@ import NoAccountsIcon from '@mui/icons-material/NoAccounts';
 import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
 
 import { NavLink } from "react-router-dom";
-import { color } from '@mui/system';
 
 export const mainListItems = (
   <React.Fragment>
-    <NavLink to='/sysmas'> 
+    <NavLink to='/sysMas' style={{ textDecoration: 'none', color: 'inherit' }}> 
       <ListItemButton>
         <ListItemIcon>
           <LibraryBooksIcon />
         </ListItemIcon>
-        <ListItemText primary="시스템 원장" style={{ textDecoration: 'none', color: 'inherit'  }} />
+        <ListItemText primary="시스템 원장" />
       </ListItemButton>
     </NavLink>
-    <NavLink to='/passMas' style={{ textDecoration: 'none', color: 'inherit'  }} >
+    <NavLink to='/passMas' style={{ textDecoration: 'none', color: 'inherit' }} >
       <ListItemButton>
         <ListItemIcon>
           <LibraryBooksIcon />
@@ -31,7 +30,7 @@ export const mainListItems = (
         <ListItemText primary="PASS 원장" />
       </ListItemButton>
     </NavLink>
-    <NavLink to='/passAplyMas'>
+    <NavLink to='/passAplyMas' style={{ textDecoration: 'none', color: 'inherit' }}>
       <ListItemButton>
         <ListItemIcon>
           <LibraryBooksIcon />

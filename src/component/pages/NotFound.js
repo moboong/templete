@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Frame from '../../Frame';
+import Frame from '../Frame';
 
 class NotFound extends Component {
 

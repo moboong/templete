@@ -11,24 +11,19 @@ import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import Badge from '@mui/material/Badge';
 import Container from '@mui/material/Container';
-import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
 import Link2 from '@mui/material/Link';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import { mainListItems, secondaryListItems } from './share/listItems';
+import { mainListItems, secondaryListItems } from './listItems';
 
-import Button from '@mui/material/Button';
-import ButtonGroup from '@mui/material/ButtonGroup';
+import { Route, Routes, Link } from "react-router-dom";
+import MainPage from './pages/mainPage/MainPage';
+import ViewSysMas from './pages/sysMas/ViewSysMas';
+import ViewPassMas from './pages/passMas/ViewPassMas';
+import ViewPassAplyMas from './pages/passAplyMas/ViewPassAplyMas';
+import NotFound from './pages/NotFound';
 
-import Chart from './nonshare/mainpage/Chart';
-import Deposits from './nonshare/mainpage/Deposits';
-import Orders from './nonshare/mainpage/Orders';
-
-import DataTable from './nonshare/contentspage/DataTable';
-
-import { Link } from "react-router-dom";
 
 function Copyright(props) {
   return (
@@ -140,7 +135,7 @@ function DashboardContent() {
               sx={{ flexGrow: 1 }}
             >            
               <Link to='/' style={{ textDecoration: 'none', color: 'inherit' }}>
-                  <img style={styleLogo} src='logopass.png' />
+                  <img style={styleLogo} src='logopass.png' alt='logopass' />
               </Link>
             </Typography>
             <IconButton color="inherit">
@@ -184,53 +179,18 @@ function DashboardContent() {
         >
           <Toolbar />
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+          
+            <Routes>
+              <Route exact path="/" element={<MainPage />} />
+              <Route exact path="/sysMas" element={<ViewSysMas />} />
+              <Route exact path="/pass
+              
+              Mas" element={<ViewPassMas />} />
+              <Route exact path="/passAplyMas" element={<ViewPassAplyMas />} />
 
-            <Grid container spacing={3}>
-              {/* Chart */}
-              <Grid item xs={12} md={8} lg={9}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    height: 240,
-                  }}
-                >
-                  <Chart />
-                </Paper>
-              </Grid>
-              {/* Recent Deposits */}
-              <Grid item xs={12} md={4} lg={3}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    height: 240,
-                  }}
-                >
-                  <Deposits />
-                </Paper>
-              </Grid>
-              {/* Recent Orders */}
-              <Grid item xs={12}>
-                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                  <Orders />
-                </Paper>
-              </Grid>
-
-              {/* table */}
-              <Grid item xs={12}>
-                <ButtonGroup color="primary" variant="contained" aria-label="outlined button group">
-                  <Button>원장 추가</Button>
-                </ButtonGroup>
-              </Grid>
-              <Grid item xs={12}>
-                
-                <DataTable />
-
-              </Grid>
-            </Grid>
+              <Route path="/*" element={<NotFound />} />
+            </Routes>
+         
             <Copyright sx={{ pt: 4 }} />
             
           </Container>
